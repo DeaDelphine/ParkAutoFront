@@ -1,0 +1,17 @@
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <h2>Listes des voitures</h2>
+  </nav>
+  <table>
+    <tr>
+      <th>Année</th>
+      <th>Prix</th>
+      <th>Image</th>
+    </tr>
+    <tr *ngFor="let v of vehicules">
+      <td>{{v.anneeModel}}</td>
+      <td>{{v.prix}}</td>
+      <td>{{v.imageVehicule}}</td>
+    </tr>
+  </table>
+</div>
