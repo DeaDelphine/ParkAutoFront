@@ -1,17 +1,23 @@
+
 <div class="container">
-  <nav class="navbar navbar-light bg-light">
-    <h2>Listes des voitures</h2>
+  <nav class="navbar align-item-center d-flex">
+    <h2 >Listes des voitures</h2>
   </nav>
-  <table>
-    <tr>
-      <th>Année</th>
-      <th>Prix</th>
-      <th>Image</th>
-    </tr>
-    <tr *ngFor="let v of vehicules">
-      <td>{{v.anneeModel}}</td>
-      <td>{{v.prix}}</td>
-      <td>{{v.imageVehicule}}</td>
-    </tr>
-  </table>
+
+  <div class="container container-fluid mt-3">
+    <div class="container d-flex">
+      <div class="row justify-content-center">
+        <ng-container *ngFor="let item of vehicules">
+          <div class="card" style="width: 22rem;">
+            <img src="http://localhost:8085/{{item.imageVehicule}}" alt="voiture" class="card-img-top mt-2">
+            <div class="card-body">
+              <h5 class="card-title">{{item.anneeModel}}  - {{item.prix}} €</h5>
+              <p class="card-text">{{item.descriptif}}</p>
+              <a href="#" class="btn btn-danger">Acheter</a>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 </div>
