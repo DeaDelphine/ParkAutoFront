@@ -10,7 +10,13 @@ export class User {
   public accountNonExpired: boolean;
   public credentialsNonExpired: boolean;
   public accountNonLocked: boolean;
-  public authorities:string[];
+  public authorities: string[];
+  public profileImageUrl: string;
+  public active: boolean;
+  public isNotLocked: boolean;
+  public lastLoginDate: Date;
+  public lastLoginDateDisplay: Date;
+  public joinDate: Date;
 
   constructor() {
     this.id = 0;
@@ -25,6 +31,13 @@ export class User {
     this.credentialsNonExpired = true;
     this.accountNonLocked = true;
     this.authorities = [];
+    this.profileImageUrl = "";
+    this.active = true;
+    this.isNotLocked = true;
+    this.lastLoginDate = new Date();
+    this.lastLoginDateDisplay = new Date();
+    this.joinDate = new Date();
+
 
   }
 }

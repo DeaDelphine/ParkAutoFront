@@ -16,8 +16,8 @@
             <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)">
               <div class="form-group">
                 <label>Firstname</label>
-                <input class="form-control form-control-lg" type="text" name="firstName" placeholder="Enter your name firstName" ngModel  #firstnamedInput="ngModel" required>
-                <span class="help-block" style="color: red;" *ngIf="firstnamedInput.invalid && firstnamedInput.touched">Please enter your firstname</span>
+                <input class="form-control form-control-lg" type="text" name="firstName" placeholder="Enter your name firstName" ngModel  #firstnameInput="ngModel" required>
+                <span class="help-block" style="color: red;" *ngIf="firstnameInput.invalid && firstnameInput.touched">Please enter your firstname</span>
               </div>
               <div class="form-group">
                 <label>Lastname</label>

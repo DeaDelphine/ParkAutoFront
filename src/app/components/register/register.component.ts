@@ -4,8 +4,7 @@ import { AuthenticationService } from '../../services/authentication/authenticat
 import { NotificationService } from '../../services/notification/notification.service';
 import { User } from '../../models/user/user';
 import { Router } from '@angular/router';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { HeaderType } from '../../enum/header-type.enum';
+import { HttpErrorResponse } from '@angular/common/http';
 import { NotificationType } from '../../enum/notification-type.enum';
 
 @Component({
@@ -20,7 +19,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     if (this.authenticationService.isLoggedIn()) {
       this.router.navigateByUrl('/user/management');
-      console.log('already logged in');
+      //console.log('already logged in');
     }
   }
 
@@ -33,6 +32,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
         (data: User ) => {
           this.showLoading = false;
           this.notificationService.notify(NotificationType.Success, `${data.firstName}, votre compte a bien été créé !`);
+          //console.log(data);
           this.router.navigateByUrl('/login');
         },
       error:

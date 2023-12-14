@@ -59,12 +59,13 @@ export class AuthenticationService {
   }
   // methode qui vérifie si l'utilisateur est bien connecter via le token
   public isLoggedIn(): boolean {
-    this.loadToken();
+    this.loadToken()
     if (this.token != null && this.token !== ' ') {
       // vérifie que la sous chaîne de notre token n'est pas null
       if (!this.jwtHelper.decodeToken(this.token).sub != null || '') {
         //vérifie que le token n'as pas expiré
         if (this.jwtHelper.isTokenExpired(this.token)) {
+
           this.loggedInUsername = this.jwtHelper.decodeToken(this.token).sub;
           return true;
         }
